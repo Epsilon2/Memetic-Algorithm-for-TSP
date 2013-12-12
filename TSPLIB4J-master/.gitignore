@@ -1,0 +1,9 @@
+data/
+bin/
+build/
+dist/
+javadoc/
+lib/
+.classpath
+.project
+*~
