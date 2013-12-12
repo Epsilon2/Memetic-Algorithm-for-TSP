@@ -8,7 +8,7 @@ This algorithm starts with a certain solution (created by using a randomized gre
 
 Memetic algorithm:
 
-This algorithm uses a candidate solution pool (default size: 100) initialized by using a randomized greedy heuristic or entirely random. In each step, some candidate solutions are selected to be replaced or to participate in recombination based on their fitness(randomized).
+This algorithm uses a candidate solution pool (default size: 100) initialized by using a randomized greedy heuristic or entirely random. In each step, some candidate solutions are selected to be replaced or to participate in recombination based on their fitness (randomized). The solutions are recombined using the DPX (distance preserving crossover) recombination operator. With a probability of 0.1, each solution is subjected to the mutation operator (a nonsequential four-change). After these steps, the 2-opt heuristic is applied to each of the candidate solutions.
 
 The TSP_main class executes both algorithms for a certain amount of time (default: 5 s) and then prints the length of the best found solution for each algorithm as well as the length of the optimal solution and additional information on the console. 
 
