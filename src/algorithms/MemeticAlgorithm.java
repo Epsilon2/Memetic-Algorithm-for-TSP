@@ -12,7 +12,7 @@ import org.moeaframework.problem.tsplib.Tour;
 
 public class MemeticAlgorithm extends TSP_Algorithm {
 	int sizeOfCandidateSolutionPool;
-	int numberOf2OptApplications;
+//	int numberOf2OptApplications;
 	Tour[] candidateSolutions;
 	double[] fitnessOfCandidateSolutions;
 	Tour bestSolutionFound;
@@ -21,11 +21,10 @@ public class MemeticAlgorithm extends TSP_Algorithm {
 	LinkedList<Double> averageFitnessOfSolutions;
 	TSP2OptHeuristic heuristic = new TSP2OptHeuristic(instance);
 
-	public MemeticAlgorithm(String s, int sizeOfCandidateSolutionPool,
-			int numberOf2OptApplications) throws IOException {
+	public MemeticAlgorithm(String s, int sizeOfCandidateSolutionPool) throws IOException {
 		super(s);
 		this.sizeOfCandidateSolutionPool = sizeOfCandidateSolutionPool;
-		this.numberOf2OptApplications = numberOf2OptApplications;
+//		this.numberOf2OptApplications = numberOf2OptApplications;
 		candidateSolutions = new Tour[sizeOfCandidateSolutionPool];
 		fitnessOfCandidateSolutions = new double[sizeOfCandidateSolutionPool];
 		bestFitnessOfSolutions = new LinkedList<Double>();

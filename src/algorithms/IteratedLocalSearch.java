@@ -6,11 +6,9 @@ import org.moeaframework.problem.tsplib.TSP2OptHeuristic;
 import org.moeaframework.problem.tsplib.Tour;
 
 public class IteratedLocalSearch extends TSP_Algorithm{
-	int numberOfApplications;
 	
-	public IteratedLocalSearch(String s, int numberOfApplications) throws IOException {
+	public IteratedLocalSearch(String s) throws IOException {
 		super(s);
-		this.numberOfApplications = numberOfApplications;
 	}
 	
 	public Tour executeAlgorithm(int timespan) {
