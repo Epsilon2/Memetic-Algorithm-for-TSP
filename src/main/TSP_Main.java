@@ -11,8 +11,7 @@ import algorithms.MemeticAlgorithm;
 public class TSP_Main {
 	
 	public static void main(String[] args) throws IOException {
-//		String nameOfInstance = readLine();
-		String nameOfInstance = "brg180";
+		String nameOfInstance = args[0];
 		IteratedLocalSearch ils = new IteratedLocalSearch(nameOfInstance,150);
 		System.out.println("Execute iterated local search algorithm");
 		Tour ils_Solution = ils.executeAlgorithm(5000);
@@ -26,10 +25,4 @@ public class TSP_Main {
 		System.out.println("optimal solution has length:");
 		System.out.println(ils.getOptimalDistance());
 	}
-
-//	private static String readLine() throws IOException {
-//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//		System.out.println("Name der TSP-Instanz eingeben:");
-//		return br.readLine();
-//	}
 }
