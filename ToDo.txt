@@ -1,0 +1,5 @@
+3-opt implementieren
+Backup für Parameter etc.
+Box Plot / anderer Plot
+10-100 mal durchlaufen lassen auf verschiedenen Instanzen (verschiedener Schwierigkeitsgrad)
+evtl. anpassen der candidate solution size
