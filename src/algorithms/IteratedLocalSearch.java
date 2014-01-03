@@ -11,7 +11,7 @@ public class IteratedLocalSearch extends TSP_Algorithm{
 		super(s);
 	}
 	
-	public Tour executeAlgorithm(int timespan) {
+	public double executeAlgorithm(int timespan, boolean drawDiagrams) {
 		long time = System.currentTimeMillis();		
 		Tour t = Tour.createTour(createGreedyRandomizedTour(instance.getDimension()));
 		Tour bestFoundSolution = t;
@@ -27,8 +27,9 @@ public class IteratedLocalSearch extends TSP_Algorithm{
 		}
 //		System.out.println(System.currentTimeMillis()-time);
 		System.out.println("Number of restarts: " + numberOfRestarts);
-		drawDiagram("IteratedLocalSearch", results);
-		return bestFoundSolution;
+		if(drawDiagrams)
+			drawDiagram("IteratedLocalSearch", results);
+		return relativeDistance(bestFoundSolution.distance(instance));
 	}
 
 }

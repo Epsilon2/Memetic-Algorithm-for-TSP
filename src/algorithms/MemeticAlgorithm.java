@@ -31,7 +31,7 @@ public class MemeticAlgorithm extends TSP_Algorithm {
 		averageFitnessOfSolutions = new LinkedList<Double>();
 	}
 
-	public double executeAlgorithm(int timespan) {
+	public double executeAlgorithm(int timespan, boolean drawDiagrams) {
 		long time = System.currentTimeMillis();
 		// Tour t = Tour.createRandomTour(instance.getDimension())
 		initializePopulation();
@@ -62,10 +62,13 @@ public class MemeticAlgorithm extends TSP_Algorithm {
 		}
 		System.out.println("Number of iterations: "
 				+ bestFitnessOfSolutions.size());
-		drawDiagram("Best Fitness", bestFitnessOfSolutions);
-//		CategoryPlot plot = chart.getCategoryPlot();
-		drawDiagram("Average Fitness", averageFitnessOfSolutions);
-		return fitnessOfBestSolution;
+		if(drawDiagrams)
+		{
+			drawDiagram("Best Fitness", bestFitnessOfSolutions);
+	//		CategoryPlot plot = chart.getCategoryPlot();
+			drawDiagram("Average Fitness", averageFitnessOfSolutions);
+		}
+		return relativeDistance(fitnessOfBestSolution);
 	}
 
 	private Tour getTourWithBestFitness() {
@@ -99,7 +102,7 @@ public class MemeticAlgorithm extends TSP_Algorithm {
 	private void mutatePopulation() {
 		for (int i = 0; i < sizeOfCandidateSolutionPool; i++) {
 			//perform a randomly selected 4-change with probability 0.1, assumes size of TSP > 8
-			if (Math.random() < 0.1)
+			if (Math.random() < 0.2)
 			{
 				candidateSolutions[i].fourChange();
 				fitnessOfCandidateSolutions[i] = candidateSolutions[i].distance(instance);

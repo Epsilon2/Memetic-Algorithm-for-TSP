@@ -61,7 +61,7 @@ public abstract class TSP_Algorithm {
 		return 100*(t.distance(instance) - getOptimalDistance())/getOptimalDistance();
 	}
 	
-	protected double relativeDistance(double d){
+	public double relativeDistance(double d){
 		return 100*(d - getOptimalDistance())/getOptimalDistance();
 	}
 	
@@ -75,7 +75,7 @@ public abstract class TSP_Algorithm {
 		for(int i = 1; i < dimension; i++)
 		{
 			int nearestCity = getNearestCity(newTour[i-1], unvisitedCities);
-			if (Math.random() < 0.6 || unvisitedCities.size() <= 1)
+			if (Math.random() < 0.66666 || unvisitedCities.size() <= 1)
 			{
 				newTour[i] = nearestCity;
 				unvisitedCities.remove(nearestCity);
